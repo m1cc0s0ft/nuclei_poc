@@ -4,10 +4,13 @@ info:
   name: Google Places Text Search API Test
   author: zzeitlin
   severity: info
+  metadata:
+    max-request: 1
   tags: token-spray,google,search,places,text
 
 self-contained: true
-requests:
+
+http:
   - method: GET
     path:
       - "https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+Sydney&key={{token}}"
@@ -18,3 +21,4 @@ requests:
         negative: true
         words:
           - 'error_message'
+
